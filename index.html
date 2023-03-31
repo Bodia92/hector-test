@@ -831,32 +831,60 @@
         <section class="news">
           <div class="news__container">
             <div class="news_tabs">
-              <ul class="news_tabs__list">
-                <li class="news_tabs__item news_tabs__item--active">Новости</li>
-                <li class="news_tabs__item">Отзывы</li>
-              </ul>
+                      <ul class="news_tabs__list">
+                        <li class="news_tabs__item">
+                          <button class="news_tabs__btn news_tabs__btn--active_state" aria-expanded="true" aria-controls="news-1" type="button">Новости</button>
+                        </li>
+                        <li class="news_tabs__item">
+                          <button class="news_tabs__btn" aria-expanded="false" aria-controls="news-2" type="button">Отзывы</button>
+                        </li>
+                      </ul>
             </div>
             <div class="news_cart">
-              <ul class="news_cart__list">
-                <li class="news_cart__item">
-                  <div class="news_cart__wrap">
-                    <div class="news_cart__bg"><img src="images/trend_bg.jpg" alt="news cart bg"></div>
-                    <div class="news_cart__content">
-                      <h3 class="news_cart__title">Тренды мужской одежды 2020</h3>
-                      <p class="news_cart__text">Распродажа коллекций со скидками до 50%, доставка до вашего склада</p><a class="news_cart__link" href="#">ЧИТАТЬ</a>
+              <div class="news_cart__content news_cart__content--active_state" id="news-1" aria-hidden="false">
+                <ul class="news_cart__list">
+                  <li class="news_cart__item">
+                    <div class="news_cart__wrap">
+                      <div class="news_cart__bg"><img src="images/trend_bg.jpg" alt="trend img one"></div>
+                      <div class="news_cart__box">
+                        <h3 class="news_cart__title">Тренды мужской одежды 2020</h3>
+                        <p class="news_cart__text">Распродажа коллекций со скидками до 50%, доставка до вашего склада</p><a class="news_cart__link" href="#">ЧИТАТЬ</a>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li class="news_cart__item">
-                  <div class="news_cart__wrap">
-                    <div class="news_cart__bg"><img src="images/trend_bg.jpg" alt="news cart bg"></div>
-                    <div class="news_cart__content">
-                      <h3 class="news_cart__title">Тренды мужской одежды 2020</h3>
-                      <p class="news_cart__text">Распродажа коллекций со скидками до 50%, доставка до вашего склада</p><a class="news_cart__link" href="#">ЧИТАТЬ</a>
+                  </li>
+                  <li class="news_cart__item">
+                    <div class="news_cart__wrap">
+                      <div class="news_cart__bg"><img src="images/trend_bg.jpg" alt="trend img one"></div>
+                      <div class="news_cart__box">
+                        <h3 class="news_cart__title">Тренды мужской одежды 2020</h3>
+                        <p class="news_cart__text">Распродажа коллекций со скидками до 50%, доставка до вашего склада</p><a class="news_cart__link" href="#">ЧИТАТЬ</a>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="news_cart__content" id="news-2" aria-hidden="true">
+                <ul class="news_cart__list">
+                  <li class="news_cart__item">
+                    <div class="news_cart__wrap">
+                      <div class="news_cart__bg"><img src="images/trend_bg.jpg" alt="trend img one"></div>
+                      <div class="news_cart__box">
+                        <h3 class="news_cart__title">Тренды 2023</h3>
+                        <p class="news_cart__text">доставка до вашего склада</p><a class="news_cart__link" href="#">Переглянути</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="news_cart__item">
+                    <div class="news_cart__wrap">
+                      <div class="news_cart__bg"><img src="images/trend_bg.jpg" alt="trend img one"></div>
+                      <div class="news_cart__box">
+                        <h3 class="news_cart__title">Чоловіча одежа</h3>
+                        <p class="news_cart__text">Распродажа коллекций со скидками до 50%</p><a class="news_cart__link" href="#">Переглянути</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="news_cart__bottom"><a class="news__btn" href="#">БОЛЬШЕ НОВОСТЕЙ</a></div>
           </div>
@@ -866,16 +894,14 @@
             <div class="sing_up__wrap">
               <h2 class="sing_up__title">Подпишись и следи за новыми поступлениями и акциями</h2>
               <ul class="sing_up__list">
-                <li class="sing_up__item">
-                  <svg class="icon icon_viber icon--size_mod">
-                    <use xlink:href="images/sprite/sprite.svg#viber"></use>
-                  </svg>
-                </li>
-                <li class="sing_up__item">
-                  <svg class="icon icon_telegram icon--size_mod">
-                    <use xlink:href="images/sprite/sprite.svg#telegram"></use>
-                  </svg>
-                </li>
+                <li class="sing_up__item"><a class="sing_up__link" href="#" aria-label="viber">
+                    <svg class="icon icon_viber icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#viber"></use>
+                    </svg></a></li>
+                <li class="sing_up__item"><a class="sing_up__link" href="#" aria-label="telegram">
+                    <svg class="icon icon_telegram icon--size_mod">
+                      <use xlink:href="images/sprite/sprite.svg#telegram"></use>
+                    </svg></a></li>
               </ul>
             </div>
             <form class="sing_up_form">
@@ -883,7 +909,7 @@
                 <div class="form_input">
                   <label class="form_input__label" for="phone-mask">phone</label>
                   <div class="form_input__field">
-                    <input class="form_input__element" type="tel" pattern="^+d{2}(d{3})sd{3}[-]d{2}[-]d{2}$" id="phone-mask" placeholder="+38 (___) ___-___-__" value="" name="phone">
+                    <input class="form_input__element" type="tel" id="phone-mask" placeholder="+38 (000) 000-000-00" value="" name="phone">
                   </div>
                 </div>
                 <div class="sing_up_form__icon">
